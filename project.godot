@@ -8,15 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "HitBoxArea2D",
+"language": "GDScript",
+"path": "res://src/player/HitBoxArea2D.gd"
+}, {
+"base": "Area2D",
+"class": "HurtBoxArea2D",
+"language": "GDScript",
+"path": "res://src/player/HurtBoxArea2D.gd"
+} ]
 _global_script_class_icons={
-
+"HitBoxArea2D": "",
+"HurtBoxArea2D": ""
 }
 
 [application]
 
 config/name="tower_defense"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="selection"
+2d_physics/layer_2="combat"
+2d_physics/layer_3="enemies"
 
 [rendering]
 
