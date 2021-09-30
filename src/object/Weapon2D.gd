@@ -12,10 +12,12 @@ onready var _cooldown_timer := $CooldownTimer
 onready var _range_area := $RangeArea2D
 onready var _animation_player := $AnimationPlayer
 onready var _range_shape: CircleShape2D = $RangeArea2D/CollisionShape2D.shape
+onready var _range_preview := $RangePreview
 
 
 func _ready() -> void:
 	set_fire_range(fire_range)
+	show_range()
 
 
 func _physics_process(_delta: float) -> void:
@@ -51,3 +53,12 @@ func shoot_at(target_position: Vector2) -> void:
 
 	_cooldown_timer.start(fire_cooldown)
 	emit_signal("fired")
+
+
+func show_range() -> void:
+	_range_preview.radius = fire_range
+	_range_preview.appear()
+
+
+func hide_range() -> void:
+	_range_preview.disappear()
