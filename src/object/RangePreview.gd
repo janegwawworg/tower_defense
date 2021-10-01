@@ -28,6 +28,6 @@ func disappear() -> void:
 	_tween.interpolate_property(
 		self, "scale", scale, Vector2.ZERO, tween_duration, Tween.TRANS_BACK, Tween.EASE_IN
 		)
-	_tween.interpolate_properry(
+	_tween.interpolate_property(
 		self, "modulate", modulate, Color(1, 1, 1, 0), tween_duration * 2.0)
 	_tween.start()

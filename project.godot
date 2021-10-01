@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/player/HurtBoxArea2D.gd"
 }, {
+"base": "Area2D",
+"class": "SelectableArea2D",
+"language": "GDScript",
+"path": "res://src/object/SelectableArea2D.gd"
+}, {
+"base": "Node2D",
+"class": "Tower",
+"language": "GDScript",
+"path": "res://src/level/Tower.gd"
+}, {
 "base": "Node2D",
 "class": "Weapon2D",
 "language": "GDScript",
@@ -27,6 +37,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "HitBoxArea2D": "",
 "HurtBoxArea2D": "",
+"SelectableArea2D": "",
+"Tower": "",
 "Weapon2D": ""
 }
 
@@ -34,6 +46,20 @@ _global_script_class_icons={
 
 config/name="tower_defense"
 config/icon="res://icon.png"
+
+[gui]
+
+theme/use_hidpi=true
+theme/custom="res://src/ui/main_theme.tres"
+theme/custom_font="res://src/ui/main_font.tres"
+
+[input]
+
+select={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [layer_names]
 
