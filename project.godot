@@ -47,6 +47,11 @@ _global_script_class_icons={
 config/name="tower_defense"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [gui]
 
 theme/use_hidpi=true
@@ -56,6 +61,11 @@ theme/custom_font="res://src/ui/main_font.tres"
 [input]
 
 select={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+tower_placement={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
