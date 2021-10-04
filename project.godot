@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "Weapon2D",
 "language": "GDScript",
 "path": "res://src/object/Weapon2D.gd"
+}, {
+"base": "Path2D",
+"class": "wave",
+"language": "GDScript",
+"path": "res://src/level/Wave.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "HurtBoxArea2D": "",
 "SelectableArea2D": "",
 "Tower": "",
-"Weapon2D": ""
+"Weapon2D": "",
+"wave": ""
 }
 
 [application]

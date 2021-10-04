@@ -1,33 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/player/enemy/Enemy.tscn" type="PackedScene" id=1]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1.12021, 6.00909, 0, 0, 0, 0, 230.631, 208.224, 0, 0, 0, 0, 612.34, 210.496, 0, 0, 0, 0, 753.208, 424.071, 0, 0, 0, 0, 1098.56, 449.063, 0, 0, 0, 0, 1180.36, 583.116, 0, 0, 0, 0, 1537.07, 703.536, 0, 0, 0, 0, 1923.33, 1071.61 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1.12021, 6.00909, 0, 0, 0, 0, 230.631, 208.224, 0, 0, 0, 0, 612.34, 210.496, 0, 0, 0, 0, 753.208, 424.071, 0, 0, 0, 0, 1098.56, 449.063, 0, 0, 0, 0, 1180.36, 583.116, 0, 0, 0, 0, 1537.07, 703.536, 0, 0, 0, 0, 1766.96, 930.832 )
 }
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Path2D
-
-
-func _ready():
-	var scene_tree := get_tree()
-	var enemy := $Enemy
-	
-	yield(scene_tree.create_timer(0.5), \"timeout\")
-	enemy.move()
-	
-	for i in 15:
-		# We wait for one second and damage the enemy.
-		yield(scene_tree.create_timer(1.0), \"timeout\")
-		enemy.health -= 1
-"
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource( 1 )
-script = SubResource( 2 )
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1.12021, 6.00909 )
-rotation = 0.71744
+rotation = 0.717441
+
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12021, 6.00909 )
+rotation = 0.717441
+
+[node name="Enemy3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12021, 6.00909 )
+rotation = 0.717441
+
+[node name="Enemy4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12021, 6.00909 )
+rotation = 0.717441
+
+[node name="Enemy5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12021, 6.00909 )
+rotation = 0.717441
