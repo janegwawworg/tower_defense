@@ -79,6 +79,7 @@ position = Vector2( 1.79242, -5.01881 )
 shape = SubResource( 1 )
 
 [node name="HurtBoxArea2D" parent="." instance=ExtResource( 2 )]
+collision_layer = 6
 team = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea2D"]

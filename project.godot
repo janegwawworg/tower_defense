@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Tower",
 "language": "GDScript",
-"path": "res://src/level/Tower.gd"
+"path": "res://src/level/tower/Tower.gd"
 }, {
 "base": "Node2D",
 "class": "Weapon2D",

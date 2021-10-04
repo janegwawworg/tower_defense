@@ -5,7 +5,6 @@
 [ext_resource path="res://src/player/player/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/object/RangePreview.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="CircleShape2D" id=1]
 resource_local_to_scene = true
 radius = 128.0
@@ -29,9 +28,6 @@ tracks/0/keys = {
 [node name="Weapon2D" type="Node2D"]
 position = Vector2( 280, 184 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 bullet_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
