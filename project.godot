@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/player/player/Bullet.gd"
+}, {
+"base": "PathFollow2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/player/enemy/Enemy.gd"
+}, {
 "base": "Area2D",
 "class": "HitBoxArea2D",
 "language": "GDScript",
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://src/object/Weapon2D.gd"
 } ]
 _global_script_class_icons={
+"Bullet": "",
+"Enemy": "",
 "HitBoxArea2D": "",
 "HurtBoxArea2D": "",
 "SelectableArea2D": "",

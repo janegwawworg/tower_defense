@@ -2,8 +2,9 @@
 
 [ext_resource path="res://src/img/sprite-sheet.svg" type="Texture" id=1]
 [ext_resource path="res://src/object/Weapon2D.gd" type="Script" id=2]
-[ext_resource path="res://src/player/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/player/player/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/object/RangePreview.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="CircleShape2D" id=1]
 resource_local_to_scene = true

@@ -6,7 +6,8 @@
 [ext_resource path="res://src/ui/UIUnit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/player/HurtBoxArea2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/object/SelectableArea2D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/level/player_base/UIHealthBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/object/UIHealthBar.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 40 )
