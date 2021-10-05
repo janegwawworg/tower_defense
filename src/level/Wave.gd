@@ -1,5 +1,5 @@
 extends Path2D
-class_name wave
+class_name Wave
 
 signal starting
 signal finished

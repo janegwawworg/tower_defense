@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/level/Wave.gd" type="Script" id=1]
+[ext_resource path="res://src/player/enemy/Enemy.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1, -3, 0, 0, 0, 0, 378, -1, 0, 0, 0, 0, 876, -2 )
+}
+
+[node name="Wave2" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]

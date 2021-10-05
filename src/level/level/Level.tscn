@@ -1,22 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/level/level/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/level/player_base/PlayerBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/player/enemy/Enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/level/Wave.gd" type="Script" id=4]
+[ext_resource path="res://src/level/level/Wave1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/level/events/EventsPlayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/level/level/PathPreview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/level/tower_placer/TowerPlacer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/level/WaveSpawner2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/level/level/Wave2.tscn" type="PackedScene" id=9]
 
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 224, 160, 0, 0, 0, 0, 416, 160, 0, 0, 0, 0, 416, 352, 0, 0, 0, 0, 672, 352, 0, 0, 0, 0, 1056, 352, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1568, 480 )
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "test"
-tracks/0/type = "method"
-tracks/0/path = NodePath("TowerPlacer/Tower")
+[sub_resource type="Animation" id=1]
+resource_name = "00.first_wave"
+tracks/0/type = "value"
+tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,65 +21,50 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "hide_interface"
-} ]
+"update": 1,
+"values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("TowerPlacer/Tower2")
+tracks/1/path = NodePath("WaveSpawner2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "hide_interface"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("TowerPlacer/Tower3")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "hide_interface"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath("wave")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "start"
+"method": "spawn"
 } ]
 }
-tracks/4/type = "method"
-tracks/4/path = NodePath("PathPreview")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0.9 ),
+
+[sub_resource type="Animation" id=2]
+resource_name = "01.second_wave"
+tracks/0/type = "value"
+tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("WaveSpawner2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "fade_out"
+"method": "spawn"
 } ]
 }
 
@@ -107,26 +89,14 @@ position = Vector2( 960, 384 )
 [node name="Tower3" parent="TowerPlacer" instance=ExtResource( 7 )]
 position = Vector2( 544, 374 )
 
-[node name="wave" type="Path2D" parent="."]
-curve = SubResource( 1 )
-script = ExtResource( 4 )
-enemy_time_interval = 1.5
-
-[node name="Enemy" parent="wave" instance=ExtResource( 3 )]
-position = Vector2( 224, 160 )
-max_health = 20
-
-[node name="Enemy2" parent="wave" instance=ExtResource( 3 )]
-position = Vector2( 224, 160 )
-max_health = 20
-
-[node name="Enemy3" parent="wave" instance=ExtResource( 3 )]
-position = Vector2( 224, 160 )
-max_health = 20
-
 [node name="PlayerBase" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1568, 480 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "test"
-anims/test = SubResource( 2 )
+[node name="WaveSpawner2D" parent="." instance=ExtResource( 8 )]
+spawn_scene = ExtResource( 9 )
+
+[node name="EventsPlayer" parent="." instance=ExtResource( 4 )]
+anims/00.first_wave = SubResource( 1 )
+anims/01.second_wave = SubResource( 2 )
+current_event = null
+[connection signal="spawned" from="WaveSpawner2D" to="EventsPlayer" method="_on_WaveSpawner2D_spawned"]
