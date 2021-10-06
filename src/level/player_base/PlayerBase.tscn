@@ -8,16 +8,12 @@
 [ext_resource path="res://src/object/SelectableArea2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/object/UIHealthBar.tscn" type="PackedScene" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 40 )
 
 [node name="PlayerBase" type="Node2D"]
 position = Vector2( 344, 256 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprites" parent="." instance=ExtResource( 1 )]
 
@@ -39,6 +35,7 @@ margin_bottom = -64.0
 rect_scale = Vector2( 1, 1 )
 
 [node name="HealthBar" parent="Interface" instance=ExtResource( 7 )]
+margin_right = 192.0
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
 margin_left = -72.0

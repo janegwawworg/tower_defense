@@ -5,12 +5,13 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 351, 0, 0, 0, 0, 0, 765, 0 )
+"points": PoolVector2Array(  )
 }
 
 [node name="Wave1" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
+enemy_time_interval = 1.5
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 
