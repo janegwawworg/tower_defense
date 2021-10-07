@@ -4,12 +4,11 @@
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/hud/ui_tower_shop/UIBottonPurchaseButton.tscn" type="PackedScene" id=3]
 
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.384314, 0.180392, 0.713726, 1 )
 
 [node name="UITowerShop" type="Panel"]
+modulate = Color( 1, 1, 1, 0.52549 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -37,25 +36,28 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -28.5
-margin_top = -24.5
-margin_right = 28.5
-margin_bottom = 24.5
+margin_left = 53.0
+margin_top = -16.5
+margin_right = -52.0
+margin_bottom = 23.5
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UIBottonPurchaseButton" parent="HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 57.0
-margin_bottom = 49.0
+margin_right = 272.0
+margin_bottom = 40.0
+
+[node name="Label" parent="HBoxContainer/UIBottonPurchaseButton" index="0"]
+margin_left = -1.0
+margin_right = 280.0
 
 [node name="Tower" parent="." instance=ExtResource( 2 )]
 visible = false
 [connection signal="sold" from="Tower" to="." method="_on_Tower_sold"]
+
+[editable path="HBoxContainer/UIBottonPurchaseButton"]
