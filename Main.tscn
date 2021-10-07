@@ -20,16 +20,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="UITowerShop" parent="CanvasLayer/UI/HUD" instance=ExtResource( 2 )]
-margin_left = -200.0
-margin_top = -304.0
-margin_right = 177.0
-margin_bottom = -129.0
+margin_left = -184.0
+margin_top = -248.0
+margin_right = 193.0
+margin_bottom = -73.0
 
 [node name="UIGoldPanel" parent="CanvasLayer/UI/HUD" instance=ExtResource( 3 )]
-margin_left = 832.064
-margin_top = 984.0
-margin_right = 1056.06
-margin_bottom = 1048.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -64.0
+margin_right = 112.0
+margin_bottom = 0.0
 
 [node name="StartButton" type="Button" parent="CanvasLayer/UI/HUD"]
 margin_left = 1304.0
@@ -50,6 +54,7 @@ margin_bottom = 48.0
 text = "Retry"
 
 [node name="MouseBarrier" type="Control" parent="CanvasLayer/UI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
