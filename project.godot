@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Panel",
 "class": "UITowerShop",
 "language": "GDScript",
-"path": "res://src/ui/hud/UITowerShop/UITowerShop.gd"
+"path": "res://src/ui/hud/ui_tower_shop/UITowerShop.gd"
 }, {
 "base": "Path2D",
 "class": "Wave",

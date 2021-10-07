@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/ui/hud/UITowerShop/tower-icon-pressed.svg" type="Texture" id=1]
-[ext_resource path="res://src/ui/hud/UITowerShop/tower-icon-disabled.svg" type="Texture" id=2]
-[ext_resource path="res://src/ui/hud/UITowerShop/tower-icon-normal.svg" type="Texture" id=3]
-[ext_resource path="res://src/ui/hud/UITowerShop/tower-icon-focused.svg" type="Texture" id=4]
-[ext_resource path="res://src/ui/hud/UITowerShop/tower-icon-hover.svg" type="Texture" id=5]
-[ext_resource path="res://src/ui/hud/UITowerShop/UIBottonPurchaseButton.gd" type="Script" id=6]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/tower-icon-pressed.svg" type="Texture" id=1]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/tower-icon-disabled.svg" type="Texture" id=2]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/tower-icon-normal.svg" type="Texture" id=3]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/tower-icon-focused.svg" type="Texture" id=4]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/tower-icon-hover.svg" type="Texture" id=5]
+[ext_resource path="res://src/ui/hud/ui_tower_shop/UIBottonPurchaseButton.gd" type="Script" id=6]
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=7]
+
 
 [node name="UIBottonPurchaseButton" type="TextureButton"]
 margin_left = 40.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tower-icon-focused.svg-37b677420342896886d298c37451d735.stex"
+path="res://.import/tower-icon-pressed.svg-113e7fb27805cbbd37ff3b1068c0335d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/ui/hud/UITowerShop/tower-icon-focused.svg"
-dest_files=[ "res://.import/tower-icon-focused.svg-37b677420342896886d298c37451d735.stex" ]
+source_file="res://src/ui/hud/ui_tower_shop/tower-icon-pressed.svg"
+dest_files=[ "res://.import/tower-icon-pressed.svg-113e7fb27805cbbd37ff3b1068c0335d.stex" ]
 
 [params]
 
