@@ -9,10 +9,10 @@
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=7]
 
 [node name="UIBottonPurchaseButton" type="TextureButton"]
-margin_left = 39.8159
-margin_top = 11.376
-margin_right = 79.8159
-margin_bottom = 51.376
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 action_mode = 0
@@ -25,17 +25,18 @@ expand = true
 stretch_mode = 5
 script = ExtResource( 6 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 tower_scene = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -32.6462
-margin_top = 37.4618
-margin_right = 81.354
-margin_bottom = 68.4618
-text = "Cost: 99"
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 82.0002
+margin_bottom = 95.0
+text = "Cost: 100"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
