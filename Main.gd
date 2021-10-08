@@ -38,3 +38,23 @@ func _on_StartButton_pressed() -> void:
 func _on_Level_round_finished() -> void:
 	_toggle_interface()
 	_level.show_walkable_path()
+
+
+func _on_Level_finished() -> void:
+	_screen_overlay.play_win()
+
+
+func _on_Level_base_destroyed() -> void:
+	_start_button.hide()
+	_tower_shop.hide()
+	_retry_button.show()
+	yield(_screen_overlay.play_lost(), "complete")
+	_toggle_interface()
+
+
+func _on_RetryButton_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_Level_gold_earned(gold_amount) -> void:
+	_player.gold += gold_amount

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/level/level/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/level/player_base/PlayerBase.tscn" type="PackedScene" id=2]
@@ -70,6 +70,22 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "rotate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 72.0, 154.0, 226.0, 298.0, 360.0 ]
+}
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -86,7 +102,7 @@ points = PoolVector2Array( 224, 160, 416, 160, 416, 352, 1056, 352, 1056, 480, 1
 [node name="TowerPlacer" parent="." instance=ExtResource( 6 )]
 
 [node name="WaveSpawner2D" parent="." instance=ExtResource( 8 )]
-spawn_scene = ExtResource( 9 )
+spawn_scene = ExtResource( 3 )
 
 [node name="EventsPlayer" parent="." instance=ExtResource( 4 )]
 anims/00.first_wave = SubResource( 1 )
@@ -100,9 +116,14 @@ texture = ExtResource( 10 )
 region_enabled = true
 region_rect = Rect2( 319, 192, 65, 65 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartPoint"]
+autoplay = "rotate"
+anims/rotate = SubResource( 3 )
+
 [node name="GoalPoint" type="Position2D" parent="."]
 position = Vector2( 863.696, 654.265 )
 
 [node name="PlayerBase" parent="GoalPoint" instance=ExtResource( 2 )]
 position = Vector2( 0, -0.262268 )
 [connection signal="spawned" from="WaveSpawner2D" to="EventsPlayer" method="_on_WaveSpawner2D_spawned"]
+[connection signal="destroyed" from="GoalPoint/PlayerBase" to="." method="_on_PlayerBase_destroyed"]

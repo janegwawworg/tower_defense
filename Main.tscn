@@ -81,3 +81,7 @@ visible = true
 
 [node name="Level" parent="." instance=ExtResource( 1 )]
 [connection signal="pressed" from="UILayer/UI/HUD/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="UILayer/UI/HUD/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="base_destroyed" from="Level" to="." method="_on_Level_base_destroyed"]
+[connection signal="finished" from="Level" to="." method="_on_Level_finished"]
+[connection signal="gold_earned" from="Level" to="." method="_on_Level_gold_earned"]
