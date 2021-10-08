@@ -48,7 +48,7 @@ func _on_Level_base_destroyed() -> void:
 	_start_button.hide()
 	_tower_shop.hide()
 	_retry_button.show()
-	yield(_screen_overlay.play_lost(), "complete")
+	yield(_screen_overlay.play_lost(), "completed")
 	_toggle_interface()
 
 
