@@ -5,7 +5,6 @@
 [ext_resource path="res://src/vfx/SmallExplosion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/player/Bullet.gd" type="Script" id=4]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.49567
 height = 7.37588
@@ -41,6 +40,7 @@ tracks/1/keys = {
 }
 
 [node name="Bullet" type="Node2D"]
+position = Vector2( 104, 104 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -69,4 +69,3 @@ playback_process_mode = 0
 anims/explode = SubResource( 2 )
 
 [node name="SmallExplosion" parent="." instance=ExtResource( 3 )]
-[connection signal="area_entered" from="HitBoxArea2D" to="HitBoxArea2D" method="_on_area_entered"]

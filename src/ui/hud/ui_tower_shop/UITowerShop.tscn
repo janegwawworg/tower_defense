@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/ui/hud/ui_tower_shop/UITowerShop.gd" type="Script" id=1]
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/hud/ui_tower_shop/UIBottonPurchaseButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/level/tower/BombTower.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.384314, 0.180392, 0.713726, 1 )
@@ -49,15 +50,30 @@ __meta__ = {
 }
 
 [node name="UIBottonPurchaseButton" parent="HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 272.0
+margin_right = 132.0
 margin_bottom = 40.0
+hint_tooltip = "Standard tower. Shoot bullet at a target direction."
 
 [node name="Label" parent="HBoxContainer/UIBottonPurchaseButton" index="0"]
-margin_left = -1.0
-margin_right = 280.0
+margin_left = -0.5
+margin_right = 135.5
+
+[node name="UIBottonPurchaseButton2" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 140.0
+margin_right = 272.0
+margin_bottom = 40.0
+hint_tooltip = "Bomb tower. Shoots a bomb at a target position that hits every enemy inside its explosion area."
+tower_scene = ExtResource( 4 )
+
+[node name="Label" parent="HBoxContainer/UIBottonPurchaseButton2" index="0"]
+margin_left = 3.5
+margin_right = 147.5
+text = "Cost: 500"
 
 [node name="Tower" parent="." instance=ExtResource( 2 )]
 visible = false
 [connection signal="sold" from="Tower" to="." method="_on_Tower_sold"]
 
 [editable path="HBoxContainer/UIBottonPurchaseButton"]
+
+[editable path="HBoxContainer/UIBottonPurchaseButton2"]

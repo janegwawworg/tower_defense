@@ -69,6 +69,7 @@ tracks/1/keys = {
 loop = false
 script = ExtResource( 4 )
 speed = 100.0
+max_health = 10
 
 [node name="CutoutCharacter" parent="." instance=ExtResource( 1 )]
 

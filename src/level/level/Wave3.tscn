@@ -8,13 +8,31 @@ _data = {
 "points": PoolVector2Array(  )
 }
 
-[node name="Wave1" type="Path2D"]
+[node name="Wave2" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
 enemy_time_interval = 1.1
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, -3 )
+rotation = 0.00530504
