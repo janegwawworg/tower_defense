@@ -68,7 +68,7 @@ tracks/1/keys = {
 [node name="Enemy" type="PathFollow2D"]
 loop = false
 script = ExtResource( 4 )
-speed = 100.0
+speed = 150.0
 max_health = 10
 
 [node name="CutoutCharacter" parent="." instance=ExtResource( 1 )]
