@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/level/Wave.gd" type="Script" id=1]
 [ext_resource path="res://src/player/enemy/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/player/enemy/ToughEnemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -15,6 +16,12 @@ enemy_time_interval = 1.1
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 
+[node name="ToughEnemy" parent="." instance=ExtResource( 3 )]
+
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
 
+[node name="ToughEnemy2" parent="." instance=ExtResource( 3 )]
+
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
+
+[node name="ToughEnemy3" parent="." instance=ExtResource( 3 )]
