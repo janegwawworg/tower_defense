@@ -11,7 +11,7 @@ _data = {
 [node name="Wave2" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
-enemy_time_interval = 1.1
+enemy_time_interval = 0.6
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1, -3 )

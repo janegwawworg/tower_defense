@@ -68,6 +68,7 @@ position = Vector2( 0, -0.262268 )
 layer = 2
 
 [node name="UIDialoguePanel" type="Panel" parent="UIDialogueLayer"]
+visible = false
 modulate = Color( 1, 1, 1, 0.384314 )
 anchor_left = 0.5
 anchor_top = 1.0
@@ -114,5 +115,5 @@ __meta__ = {
 }
 [connection signal="spawned" from="WaveSpawner2D" to="EventsPlayer" method="_on_WaveSpawner2D_spawned"]
 [connection signal="destroyed" from="GoalPoint/PlayerBase" to="." method="_on_PlayerBase_destroyed"]
-[connection signal="pressed" from="UIDialogueLayer/UIDialoguePanel/Button" to="EventsPlayer" method="play_current_event"]
 [connection signal="pressed" from="UIDialogueLayer/UIDialoguePanel/Button" to="UIDialogueLayer/UIDialoguePanel" method="hide"]
+[connection signal="pressed" from="UIDialogueLayer/UIDialoguePanel/Button" to="EventsPlayer" method="play_current_event"]

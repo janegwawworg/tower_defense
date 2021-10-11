@@ -20,4 +20,3 @@ func play_current_event() -> void:
 func _on_WaveSpawner2D_spawned(spawn: Wave) -> void:
 	spawn.start()
 	yield(spawn, "finished")
-	play_current_event()
