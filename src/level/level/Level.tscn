@@ -1,106 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/level/level/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/level/player_base/PlayerBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/level/level/Wave1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/level/events/EventsPlayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/level/level/PathPreview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/level/tower_placer/TowerPlacer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/level/level/Wave3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/level/WaveSpawner2D.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/level/level/Wave2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/img/sprite-sheet.svg" type="Texture" id=10]
 [ext_resource path="res://src/level/astar/AStarGrid.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/level/level/Level.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
-resource_name = "00.first_wave"
-tracks/0/type = "value"
-tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "spawn_wave"
-} ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "01.second_wave"
-tracks/0/type = "value"
-tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 9 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "spawn_wave"
-} ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "02.third_wave"
-tracks/0/type = "value"
-tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "spawn_wave"
-} ]
-}
-
-[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -134,9 +45,6 @@ points = PoolVector2Array( 224, 160, 416, 160, 416, 352, 1056, 352, 1056, 480, 1
 spawn_scene = ExtResource( 7 )
 
 [node name="EventsPlayer" parent="." instance=ExtResource( 4 )]
-anims/00.first_wave = SubResource( 1 )
-anims/01.second_wave = SubResource( 2 )
-anims/02.third_wave = SubResource( 3 )
 
 [node name="StartPoint" type="Position2D" parent="."]
 position = Vector2( 662.625, 164.76 )
@@ -148,12 +56,63 @@ region_rect = Rect2( 319, 192, 65, 65 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StartPoint"]
 autoplay = "rotate"
-anims/rotate = SubResource( 4 )
+anims/rotate = SubResource( 1 )
 
 [node name="GoalPoint" type="Position2D" parent="."]
 position = Vector2( 863.696, 654.265 )
 
 [node name="PlayerBase" parent="GoalPoint" instance=ExtResource( 2 )]
 position = Vector2( 0, -0.262268 )
+
+[node name="UIDialogueLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="UIDialoguePanel" type="Panel" parent="UIDialogueLayer"]
+modulate = Color( 1, 1, 1, 0.384314 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -280.0
+margin_top = -216.0
+margin_right = 254.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UIDialogueLayer/UIDialoguePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -16.0
+margin_right = 197.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Dialog lines go there!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="UIDialogueLayer/UIDialoguePanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -56.0
+margin_right = 33.0
+margin_bottom = -17.0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="spawned" from="WaveSpawner2D" to="EventsPlayer" method="_on_WaveSpawner2D_spawned"]
 [connection signal="destroyed" from="GoalPoint/PlayerBase" to="." method="_on_PlayerBase_destroyed"]
+[connection signal="pressed" from="UIDialogueLayer/UIDialoguePanel/Button" to="EventsPlayer" method="play_current_event"]
+[connection signal="pressed" from="UIDialogueLayer/UIDialoguePanel/Button" to="UIDialogueLayer/UIDialoguePanel" method="hide"]
