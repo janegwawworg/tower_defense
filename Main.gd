@@ -1,5 +1,7 @@
 extends Node
 
+export(String, FILE, "*.tscn") var end_scene_path = "res://src/level/end_screen/EndScreen.tscn"
+
 onready var _player := $Player
 onready var _level := $Level1
 onready var _hud := $UILayer/UI/HUD
@@ -14,11 +16,11 @@ onready var _gold_panel := $UILayer/UI/HUD/UIGoldPanel
 func _ready() -> void:
 	_tower_shop.player = _player
 	_gold_panel.player = _player
-	_setup_level1()
+	_setup_level()
 	_level.start()
 	
 	
-func _setup_level1() -> void:
+func _setup_level() -> void:
 	_level.connect("base_destroyed", self, "_on_Level_base_destroyed")
 	_level.connect("finished", self, "_on_Level_finished")
 	_level.connect("gold_earned", self, "_on_Level_gold_earned")
@@ -50,7 +52,25 @@ func _on_Level_round_finished() -> void:
 
 
 func _on_Level_finished() -> void:
-	_screen_overlay.play_win()
+	yield(_screen_overlay.play_win(), "completed")
+	if _level.next_level_path:
+		load_next_level()
+	else:
+		var end_scene: Node = load(end_scene_path).instance()
+		end_scene.player_score = _player.gold
+		var packed_scene := PackedScene.new()
+		packed_scene.pack(end_scene)
+		get_tree().change_scene_to(packed_scene)
+		
+		
+func load_next_level() -> void:
+	var next_level: Node = load(_level.next_level_path).instance()
+	_level.queue_free()
+	_level = next_level
+	add_child(_level)
+	
+	_setup_level()
+	_level.start()
 
 
 func _on_Level_base_destroyed() -> void:

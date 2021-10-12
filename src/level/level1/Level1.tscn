@@ -192,7 +192,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "05.second_wave"
 tracks/0/type = "value"
 tracks/0/path = NodePath("WaveSpawner2D:spawn_scene")
@@ -232,7 +232,8 @@ anims/01.intro = SubResource( 2 )
 anims/02.base-highlight = SubResource( 3 )
 anims/03.start = SubResource( 4 )
 anims/04.first-wave = SubResource( 5 )
-anims/05.second_wave = SubResource( 7 )
+anims/05.second_wave = SubResource( 6 )
+current_event = 5
 
 [node name="UIDialoguePanel" parent="UIDialogueLayer" index="0"]
 visible = true
