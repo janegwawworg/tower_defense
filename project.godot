@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/ui/hud/ui_tower_shop/UITowerShop.gd"
 }, {
+"base": "Button",
+"class": "UIUpgrade",
+"language": "GDScript",
+"path": "res://UIUpgradeButton.gd"
+}, {
 "base": "Node",
 "class": "Upgrade",
 "language": "GDScript",
@@ -78,6 +83,7 @@ _global_script_class_icons={
 "SelectableArea2D": "",
 "Tower": "",
 "UITowerShop": "",
+"UIUpgrade": "",
 "Upgrade": "",
 "Wave": "",
 "WaveSpawner2D": "",
