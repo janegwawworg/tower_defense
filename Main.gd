@@ -11,22 +11,25 @@ onready var _mouse_barrier := $UILayer/UI/MouseBarrier
 onready var _retry_button := $UILayer/UI/HUD/RetryButton
 onready var _start_button := $UILayer/UI/HUD/StartButton
 onready var _gold_panel := $UILayer/UI/HUD/UIGoldPanel
+onready var _upgrade_shop := $UILayer/UI/HUD/UIUpgradeShop
 
 
 func _ready() -> void:
 	_tower_shop.player = _player
 	_gold_panel.player = _player
+	_upgrade_shop.player = _player
 	_setup_level()
 	_level.start()
-	
-	
+
+
 func _setup_level() -> void:
 	_level.connect("base_destroyed", self, "_on_Level_base_destroyed")
 	_level.connect("finished", self, "_on_Level_finished")
 	_level.connect("gold_earned", self, "_on_Level_gold_earned")
 	_level.connect("round_finished", self, "_on_Level_round_finished")
-	
+
 	_level.tower_placer.connect("tower_placed", _tower_shop, "_on_TowerPlacer_tower_placed")
+	_level.tower_placer.connect("tower_placed", _upgrade_shop, "_on_TowerPlacer_tower_placed")
 	_tower_shop.connect("tower_purchased", _level.tower_placer, "add_new_tower")
 
 
@@ -61,14 +64,14 @@ func _on_Level_finished() -> void:
 		var packed_scene := PackedScene.new()
 		packed_scene.pack(end_scene)
 		get_tree().change_scene_to(packed_scene)
-		
-		
+
+
 func load_next_level() -> void:
 	var next_level: Node = load(_level.next_level_path).instance()
 	_level.queue_free()
 	_level = next_level
 	add_child(_level)
-	
+
 	_setup_level()
 	_level.start()
 

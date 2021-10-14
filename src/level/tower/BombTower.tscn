@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/level/tower/Tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/player/player/BombBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/ui/ui_upgrade_shop/upgrades/FireRangeUpgrade.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 resource_local_to_scene = true
@@ -24,5 +25,12 @@ position = Vector2( 59.2553, 0.451874 )
 
 [node name="CollisionShape2D" parent="Weapon2D/RangeArea2D" index="0"]
 shape = SubResource( 1 )
+
+[node name="FireRangUpgrade" type="Node" parent="Upgrades" index="0"]
+script = ExtResource( 3 )
+display_name = "FireRange"
+description = "Increases the tower's reach.."
+cost = 120
+cost_multiplier = 1.4
 
 [editable path="Weapon2D"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UIUpgradeButton.gd" type="Script" id=1]
+
+[node name="UIUpgradeButton" type="Button"]
+margin_right = 8.0
+margin_bottom = 39.0
+text = "Upgrade"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
