@@ -1,5 +1,5 @@
 extends Button
-class_name UIUpgrade
+class_name UIUpgradeButton
 
 
 func _upgrade_display(upgrade: Upgrade, player_gold: int) -> void:

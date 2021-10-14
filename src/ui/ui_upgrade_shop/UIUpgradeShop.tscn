@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/ui/ui_upgrade_shop/UIUpgradeShop.gd" type="Script" id=1]
+[ext_resource path="res://src/ui/ui_upgrade_shop/UIUpgradeButton.tscn" type="PackedScene" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.356863, 0.176471, 0.572549, 0.607843 )
@@ -28,12 +31,30 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0.05, 1 ), Vector2( 0.5, 1 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "disappear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 0.5 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 1 ), Vector2( 0.05, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
 [node name="UIUpgradeShop" type="Control"]
 rect_pivot_offset = Vector2( 32, 32 )
 mouse_filter = 2
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+upgrade_button_scene = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color( 0.364706, 0.509804, 0.819608, 0.623529 )
@@ -45,7 +66,6 @@ rect_scale = Vector2( 1e-05, 1e-05 )
 rect_pivot_offset = Vector2( 128, 160 )
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -87,3 +107,4 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/appear = SubResource( 2 )
+anims/disappear = SubResource( 3 )
